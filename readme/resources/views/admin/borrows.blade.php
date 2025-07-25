@@ -38,6 +38,7 @@
                         @if($borrow->status === 'borrowed')
                             <form action="{{ route('admin.borrows.force-return', $borrow) }}" method="POST" class="inline">
                                 @csrf
+                                @method('PATCH')
                                 <button type="submit" class="text-blue-600 hover:underline">Retour forcé</button>
                             </form>
                         @else
