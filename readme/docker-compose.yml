@@ -19,6 +19,8 @@ services:
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
             - '.:/var/www/html'
+            - './entrypoint.sh:/docker-entrypoint.sh'
+        entrypoint: ["/docker-entrypoint.sh"]
         networks:
             - sail
         depends_on:
